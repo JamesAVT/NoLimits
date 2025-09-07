@@ -1,0 +1,207 @@
+/* ===== NoLimits (brand) unificado ===== */
+#brand{
+  /* tipografía + layout inline */
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+
+  /* peso y tamaño responsivo */
+  font-weight: 800;
+  font-size: clamp(1rem, 6vw, 4rem);
+
+  /* color base + glow inicial */
+  color: #e4e0e0;
+  -webkit-text-stroke: 0;
+  text-shadow:
+    0 0 12px rgba(0,0,0,.85),
+    0 0 22px rgba(123,92,255,.75),
+    0 0 34px rgba(255,77,236,.65);
+
+  /* pulso suave */
+  animation: nl-pulse 5s ease-in-out infinite;
+
+  /* centrado absoluto (si usas grid/flex en la navbar, puedes quitar estas 3 líneas) */
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  /* transiciones suaves */
+  margin: 0;
+  transition: text-shadow .25s ease, transform .25s ease, filter .25s ease;
+}
+
+/* Hover: más brillo y micro-zoom */
+#brand:hover{
+  filter: brightness(1.12);
+  text-shadow:
+    0 0 5px rgba(255,255,255,.5),
+    0 0 28px rgba(123,92,255,.85),
+    0 0 40px rgba(255,77,236,.75),
+    0 0 30px rgba(0,231,255,.30);
+  transform: translate(-50%, -50%) scale(1.015);
+}
+
+/* Animación de pulso */
+@keyframes nl-pulse{
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.25); }
+}
+
+
+/* ===== Sub-brand ===== */
+#sub-brand{
+  display:inline-block; line-height:1; text-decoration:none; user-select:none;
+  font-size:clamp(0.8rem,4vw,2rem);
+  background:linear-gradient(90deg,#ff4dec,#00e7ff,#7b5cff);
+  background-size:300% 100%;
+  -webkit-background-clip:text; color:transparent;
+  -webkit-text-stroke:1.5px #a366ff;
+  text-shadow:0 0 2px rgba(111,241,255,.4), 0 0 6px rgba(123,92,255,.25);
+  animation:nl-sheen 8s linear infinite;
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  margin:0; font-weight:500;
+}
+#sub-brand:hover{ -webkit-text-stroke-color:#c28cff; }
+
+/* --- Navbar con el fondo personalizado ---*/
+.bg-body-tertiary{
+    background: url("/assets/img/imagenfondopantalla.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    min-height: 90px;
+    padding: 20px 40px;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding: 40px 40px;
+}
+
+/* --- Para el borde animado --- */
+.bg-body-tertiary::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 2px;
+    border-radius: 10px;
+    background: linear-gradient(270deg, #00e7ff, #ff4dec, #7b5cff, #00e7ff);
+    background-size: 600% 100%;
+    z-index: 2;
+    
+    /* Para mostrar el borde y no cubrir el fondo */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-box;
+    mask-composite: exclude;
+    pointer-events: none; /* Chicos, esto es para que no interfiera con los clicks */
+    animation: neon-border 5s linear infinite;
+}
+
+
+/* --- Texto y enlaces en el navar (Separación de los botones "Nosotros" y "Categorias") ---*/
+.bg-body-tertiary .nav-link{
+    position: relative;
+    padding: 8px 18px;
+    border-radius: 10px;
+    z-index: 1;
+    margin: 0 15px;
+}
+
+/* --- Boton de cerrar sesion ---*/
+.btn-cerrarSesion{
+  display:inline-flex; 
+  align-items:center; 
+  gap:8px; 
+  cursor:pointer;
+  padding:10px 12px; 
+  border-radius:12px; 
+  text-decoration:none; 
+  font-weight:700;
+  background:rgba(2,20,27,.55);   /* fondo “glass” oscuro */
+  color:#cfefff;                   /* texto celeste */
+  border:0;
+  transition: transform .18s ease,
+              box-shadow .25s ease,
+              background .25s ease,
+              color .25s ease;     /* animación hover */
+}
+
+/* --- Hover del boton de cerrar sesion - fondo rojo y letras negras*/
+.btn-cerrarSesion:hover,
+.btn-cerrarSesion:focus-visible{
+  transform: translateY(-2px);     /* se “levanta” */
+  background: rgba(2,20,27,.75);   /* un poco más claro */
+  box-shadow:
+    0 0 18px rgba(0,231,255,.45),
+    0 0 22px rgba(123,92,255,.28),
+    0 0 26px rgba(255,77,236,.22); /* glow cian/violeta/magenta */
+}
+
+.btn-cerrarSesion a{
+  color:#cfefff; 
+  text-decoration:none; 
+}
+
+.btn-cerrarSesion a:hover,
+.btn-cerrarSesion a:focus-visible{
+  color:#83e2ff;
+  text-shadow: 0 0 6px rgba(0,231,255,.45),
+               0 0 10px rgba(123,92,255,.30);
+}
+
+/* --- Boton del carrito para que sea mas curvo ---*/
+.carrito-btn{
+  border-radius: 20cm;
+}
+
+/* --- Espacio entre los botones de Buscar, Carrito y Cerrar Sesion */
+.bg-body-tertiary .navbar-collapse{
+  display: flex;
+  align-items: center;
+  justify-items: flex-end;
+  gap: 20px;
+}
+
+
+
+
+/* Fondo negro para Nosotros, Categorías*/
+.bg-body-tertiary .nav-link::before{
+    content: "";
+    position: absolute;
+    left: -6px; right: -6px;
+    top: -4px; bottom: -4px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    z-index: -1;
+    mix-blend-mode: lighten;
+}
+
+.bg-body-tertiary .nav-link,
+.bg-body-tertiary .navbar-brand{
+    font-weight: bold;
+    background: linear-gradient(270deg, #00e7ff, #ff4dec, #7b5cff, #00e7ff);
+    background-size: 600% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #ff4dec, #7b5cff, #00e7ff;
+    animation: neon-color 5s linear infinite;
+    transition: 0.3s ease-in-out;
+}
+
+/* --- Hover efecto neon ---*/
+.bg-body-tertiary .nav-link:hover,
+.bg-body-tertiary .nav-brand:hover{
+    text-shadow: 0 0 10px #0ff, 0 0 20px #ff4dec, 0 0 30px #7b5cff;
+    transform: scale(1.02);
+}
+
+/* --- Animacion del gradient ---*/
+@keyframes neon-border{
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
