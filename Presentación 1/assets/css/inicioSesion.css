@@ -1,180 +1,180 @@
 /* --- Ajustes básicos ---*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
+    margin: 0; /* Quita el margen por defecto de todos los elementos */
+    padding: 0; /*Quita el padding por defecto de todos los elementos */
+    box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento*/
+    outline: none; /* Quita el borde de enfoque por defecto */
 }
 img {
-    max-width: 100%;
+    max-width: 100%; /* Las imágenes no se salen del ancho de su contenedor */
 }
 
 /* --- Estilo del body --- */
 body {
-    min-height: 100dvh;
+    min-height: 100dvh; /* Altura mínima igual a la altura de la ventana */
     background-color: aliceblue;
     background-image: url("/assets/img/imagenfondopantalla.jpg");
-    color: white;
-    display: flex;
-    flex-direction: column;
+    color: white; /* Color del texto */
+    display: flex; /* Permite organizar elementos */
+    flex-direction: column; /* Coloca los elementos en columna */
     justify-content: center;   /* Centra vertical */
     align-items: center;       /* Centra horizontal */
-    padding: 1rem;
+    padding: 1rem;             /* Espacio interno */
 }
 
 /* --- Cuadro de iniciar sesión --- */
 section {
-    width: 500px;
-    max-width: 500px;
+    width: 500px;       /* Ancho */
+    max-width: 500px; /* Ancho máximo */
     background-image: url("../assets/img/slide1.jpeg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 0.5rem;
-    color: white;
-    padding: 3rem;
-    border: 5px solid transparent;
-    box-shadow: 0 0 20px #00f7ff, 0 0 40px #a020f0, 0 0 60px #ff1493;
-    transition: all 0.5s ease-in-out;
-    background-clip: padding-box;
-    position: relative;
-    align-items: center;
-    filter: brightness(0.8) contrast(1.1);
-    margin-top: 50px;
+    background-size: cover; /* La imagen cubre todo el contenedor */
+    background-position: center; /*Centra la imagen */
+    border-radius: 0.5rem; /* Bordes redondos*/
+    color: white; /* Color de texto */
+    padding: 3rem; /* Espaciado interno*/
+    border: 5px solid transparent; /*Borde invisible */
+    box-shadow: 0 0 20px #00f7ff, 0 0 40px #a020f0, 0 0 60px #ff1493; /*Sombra de colores */
+    transition: all 0.5s ease-in-out; /* Transición suave para los cambios*/
+    background-clip: padding-box; /* El borde no afecta el fondo*/
+    position: relative; /*Tipo de posicionamiento */
+    align-items: center; /* Centra el contenido */
+    filter: brightness(0.8) contrast(1.1); /*Ajuste del brillo y el contraste */
+    margin-top: 50px; /* Separación superior */
 }
 
 /* --- Borde con efecto neón ---*/
 section::before {
-    content: '';
-    position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
-    border-radius: 0.5rem;
-    border: 5px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(90deg, #00f7ff, #a020f0, #ff1493, #00f7ff);
-    animation: neon-border 3s linear infinite;
-    pointer-events: none;
+    content: '';        /* Elemento vacío*/
+    position: absolute; /* Posición respecto al section */
+    top: -5px; left: -5px; right: -5px; bottom: -5px; /* Se extiende un poco más allá del borde */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    border: 5px solid; /* Borde visible */
+    border-image-slice: 1; /* Degradado en el borde*/
+    border-image-source: linear-gradient(90deg, #00f7ff, #a020f0, #ff1493, #00f7ff); /* Degradado */
+    animation: neon-border 3s linear infinite; /* Animación de neón*/
+    pointer-events: none; /* No bloquea los clicks*/
 }
 section:hover::before {
-    animation: neon-border-reverse 3s linear infinite;
+    animation: neon-border-reverse 3s linear infinite; /* Cambia animación al pasar el cursor */
 }
 
 
 header {
-    height: 200px;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 200px;      /* Alto */
+    padding: 0.5rem; /* Espaciado*/
+    display: flex; /* Permite organizar elementos  */
+    justify-content: center; /* Centra horizontalmente*/
+    align-items: center; /* Centra verticalmente*/
 }
 footer {
-    padding: 1rem;
+    padding: 1rem; /* Espaciado */
 }
 footer input,
 footer button {
-    display: block;
-    width: 100%;
-    padding: 10px 20px;
-    border: none;
+    display: block; /* Ocupa toda la línea */
+    width: 100%;    /* Ocupa todo el ancho */
+    padding: 10px 20px; /* Espaciado */
+    border: none; /* Sin borde por defecto*/
     font-size: 1.2rem;
     color: white;
-    border-radius: 5px;
-    margin-top: 1.5rem;
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 1.5rem; /* Separación de arriba */
 }
 footer input {
-    color: black;
+    color: black;   /* Color del texto de los inputs */
 }
 footer input::placeholder {
-    color: black;
+    color: black;           /* Color del placeholder */
 }
 footer button {
-    background: linear-gradient(90deg, #00f7ff, #a020f0, #ff1493);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.5vmin;
-    padding: 0.75rem 1rem;
-    font-size: 1.2rem;
-    transition: all 0.4s ease-in-out;
+    background: linear-gradient(90deg, #00f7ff, #a020f0, #ff1493); /* Degradado*/
+    color: white; /* Texto blanco */
+    font-weight: bold; 
+    cursor: pointer; /* Cursor */
+    border-radius: 0.5vmin; /* Bordes redondeados*/
+    padding: 0.75rem 1rem; /* Espaciado interno */
+    font-size: 1.2rem; 
+    transition: all 0.4s ease-in-out; /* Transición suave*/
 }
 footer button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #00f7ff, 0 0 30px #a020f0, 0 0 45px #ff1493;
+    transform: scale(1.05);     /* Aumenta un poco al pasar el cursor */
+    box-shadow: 0 0 15px #00f7ff, 0 0 30px #a020f0, 0 0 45px #ff1493; /* Sombra neón*/
 }
 
 /* --- Titulo de NoLimits --- */
 #brand {
   font-family: 'Poppins', sans-serif;
-  display:inline-block; 
-  line-height:1; 
+  display:inline-block; /* El elemento se coloca en línea con otros*/
+  line-height:1; /* Ajusta la altura de la línea de texto al tamaño de la fuente*/
   text-decoration:none; 
-  user-select:none;
-  font-size:clamp(1rem,6vw,4rem);
+  user-select:none;     /* No permite seleccionar el texto  */
+  font-size:clamp(1rem,6vw,4rem); /* Tamaño */
   color:#e4e0e0;
-  -webkit-text-stroke:0;
+  -webkit-text-stroke:0; /* Añade un contorno al texto */
   text-shadow:
     0 0 12px rgba(0,0,0,.85),
     0 0 22px rgba(123,92,255,.75),
     0 0 34px rgba(255,77,236,.65);
-  animation:nl-pulse 5s ease-in-out infinite;
-  position:absolute; left:50%; top:45%; transform:translate(-50%,-50%);
+  animation:nl-pulse 5s ease-in-out infinite; /* Animación del pulso */
+  position:absolute; left:50%; top:45%; transform:translate(-50%,-50%); /* Centrado */
   margin:0; font-weight:800;
-  transition: text-shadow .25s ease, transform .25s ease, filter .25s ease;
+  transition: text-shadow .25s ease, transform .25s ease, filter .25s ease; /*Transición suave */
 }
 #brand:hover {
-  filter: brightness(1.12);
+  filter: brightness(1.12); /* Aumenta el brillo*/
   text-shadow:
     0 0 5px rgba(255,255,255,.5),
     0 0 28px rgba(123,92,255,.85),
     0 0 40px rgba(255,77,236,.75),
     0 0 30px rgba(0,231,255,.30);
-  transform: translate(-50%,-50%) scale(1.015);
+  transform: translate(-50%,-50%) scale(1.015); /* Escala al pasar el cursor */
 }
 
 
 /* --- Avatar (imagen dentro del circulo que se mueve en el cuadro de iniciar sesión) ---*/
 .image-container {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: black;
-    border: 5px solid #986844;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    animation: neon-border 3s linear infinite;
-    transition: all 0.5s ease-in-out;
-    margin-top: -10px;
+    width: 200px;   /* Ancho del círculo*/
+    height: 200px; /*Alto del círculo */
+    border-radius: 50%; /* Forma circular */
+    background: black; /* Fondo negro*/
+    border: 5px solid #986844; /*Borde */
+    position: relative; /* Mantiene el elemento en su posición normal*/
+    overflow: hidden; /* Ocula lo que sobresalga*/
+    cursor: pointer; /* Cursor */
+    animation: neon-border 3s linear infinite; /* Animación del borde*/
+    transition: all 0.5s ease-in-out; /* Transición suave */
+    margin-top: -10px; /* Separación superior*/
 }
 .image-container:hover {
-    animation: neon-border-reverse 6s linear infinite;
+    animation: neon-border-reverse 6s linear infinite; /*Animación inversa al hover */
 }
 .image-container .image {
     position: absolute;
-    width: 320px;
-    height: 260px;
-    bottom: -35px;
-    left: 2%;
-    animation: avatar 5s ease-in-out infinite;
-    transition: 500ms;
+    width: 320px; /*Ancho de la imagen interna */
+    height: 260px; /* Alto de la imagen interna*/
+    bottom: -35px; /* Posición desde abajo */
+    left: 2%; /* Posición desde la izquierda */
+    animation: avatar 5s ease-in-out infinite; /* Animación de movimiento */
+    transition: 500ms; /* Transición suave */
     background-color: rgb(2, 23, 70);
-    overflow: hidden;
-    margin-left: -70px;
+    overflow: hidden; /*Ocula lo que sobresalga */
+    margin-left: -70px; /*Desplazamiento lateral */
 }
 
 /* --- Botones  ---*/
 .forgot-password {
-    display: block;
-    margin: 0.5rem 0 1rem;
+    display: block; /* Hace que el elemento ocupe toda la línea disponible */
+    margin: 0.5rem 0 1rem; /* Márgenes */
     font-size: 0.9rem;
     color: #00f7ff;
     text-decoration: none;
     transition: color 0.3s ease;
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 1.5rem; /*Separación superior  */
 }
 .forgot-password:hover {
-    color: #ff1493;
-    text-decoration: underline;
+    color: #ff1493; /* Cambia a el color rosa al pasar el cursor */
+    text-decoration: underline; /*Subrayado */
 }
 
 .btn_salir {
@@ -184,7 +184,7 @@ footer button:hover {
     background:#000; color:#fff;
     box-shadow: 0 0 22px rgba(255,42,191,.55), 
                 0 0 28px rgba(123,92,255,.45), 
-                0 0 34px rgba(0,231,255,.40);
+                0 0 34px rgba(0,231,255,.40); /* Sombra neón*/
 }
 .btn_no_tienes_cuenta {
     color: #00f7ff;
@@ -194,12 +194,12 @@ footer button:hover {
     background:#000; color:#fff;
     box-shadow:0 0 22px rgba(255,42,191,.55), 
                0 0 28px rgba(123,92,255,.45), 
-               0 0 34px rgba(0,231,255,.40);
+               0 0 34px rgba(0,231,255,.40); /* Sombra neón*/
 }
 
 /* --- Animación backflip --- */
 .backflip {
-    animation: backflip 1s ease-in-out forwards;
+    animation: backflip 1s ease-in-out forwards; /* Animación del backflip de la imagen*/
 }
 /* --- Animaciones ---*/
 @keyframes neon-border {
